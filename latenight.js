@@ -35,20 +35,19 @@ function futureHappy() {
 
   function eat(food, Thursday) {
     var stomachNow = stomach;
-    while(stomachNow < eyes) {
+    while(stomachNow < eyes && food.length) {
       food.pop(); 
       stomachNow++;
     } 
 
-    if(stomachNow == eyes && food.length) {
-      inFridge = food;
-      if(Thursday) alert('Leftovers, what a treat!');
-      } else alert('grumble grumble. I ran out of bao!!'); 
+    if(Thursday) { alert('Leftovers, what a treat!');
+      } else if(stomachNow == eyes && food.length) {
+          inFridge = food; 
+        } else alert('grumble grumble. I ran out of bao!!'); 
   }
 
   // Monday
-  var atTheDoor = me.fellowship()
-  if(prompt('MONDAY: ' + atTheDoor).match(/y(es)?/i)) {
+  if(prompt('MONDAY: ' + me.fellowship()).match(/y(es)?/i)) {
     myLunch = order(yum.menu);
     eat(myLunch);
     if(inFridge) me.leftovers();
