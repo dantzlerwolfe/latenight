@@ -38,9 +38,10 @@ function futureHappy() {
     if(stomach < eyes) {
       stomach++;
       return eat(food);
-    } else if(stomach == eyes && food.length) inFridge = food;
-      else if(Thursday) alert('Leftovers, what a treat!');
-      else alert('grumble grumble. I ran out of bao!!'); 
+    } else if(stomach == eyes && food.length) {
+        inFridge = food;
+        if(Thursday) alert('Leftovers, what a treat!');
+      } else alert('grumble grumble. I ran out of bao!!'); 
   }
 
   // Monday
