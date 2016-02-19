@@ -40,7 +40,7 @@ function futureHappy() {
       return eat(food);
     } else if(stomach == eyes && food.length) inFridge = food;
       else if(today == 'THU') alert('Leftovers, what a treat!');
-      else alert('grumble'); 
+      else alert('grumble grumble. I ran out of bao!!'); 
   }
 
   // Monday
