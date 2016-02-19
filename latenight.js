@@ -1,7 +1,7 @@
 // Why I'm happy at midnight.
 
 function futureHappy() {
-  var today = new Date().toDateString().split(" ")[0],
+  var //today = new Date().toDateString().split(" ")[0],
       yum = {
         name: 'Golden_Steamer',
         menu: ['veggieBao', 'jumboBao', 'porkBao', 'porkVeggieBao', 'pumpkinBao']
@@ -33,13 +33,14 @@ function futureHappy() {
     return inthebag;
   }
 
-  function eat(food) {
+  function eat(food, Thursday) {
     food.pop(); 
     if(stomach < eyes) {
       stomach++;
       return eat(food);
     } else if(stomach == eyes && food.length) inFridge = food;
-      else return 'grumble'; 
+      else if(today == 'THU') alert('Leftovers, what a treat!');
+      else alert('grumble'; 
   }
 
   // Monday
@@ -53,7 +54,7 @@ function futureHappy() {
     // Thursday
     if(inFridge) {
       me.discover(inFridge);
-      eat(inFridge);
+      eat(inFridge, true);
     }
     // Monday again
     if(prompt('Should we be happy again next week? Y/N').match(/y(es)?/i)) {
