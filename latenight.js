@@ -8,7 +8,6 @@ function futureHappy() {
       },
       me = {
         name: 'randomRecurser',
-        eyes: {size: 9},
         stomach: {size: 5},
         forget: function(something) { window.alert('TUESDAY: If only I had a bao :\('); },
         discover: function(something) {
@@ -18,30 +17,28 @@ function futureHappy() {
         leftovers: function() { window.alert('Food for days! I\'ll put the ' +
           'rest in the fridge for later!') }
       },
-      eyes = me.eyes.size,
-      stomach = me.stomach.size,
+      stomach = me.stomach.size * .8 * (1 + Math.random() * .5),
       myLunch,
       inFridge;
 
   function order(menu) {
-    var delusion = eyes - Math.round(Math.random() * stomach),
+    var eyes = 2 * Math.random() * stomach,
         inthebag = [];
-    while(delusion > 0) {
+    while(inthebag.length < eyes) {
       inthebag.push(menu[Math.floor(Math.random() * menu.length)]);
-      delusion--;
     }
     return inthebag;
   }
 
   function eat(food, Thursday) {
-    var stomachNow = stomach;
-    while(stomachNow < eyes && food.length) {
+    var stomachNow = 0;
+    while(stomachNow < stomach && food.length) {
       food.pop(); 
       stomachNow++;
     } 
 
     if(Thursday) { alert('Leftovers, what a treat!');
-      } else if(stomachNow == eyes && food.length) {
+      } else if(stomachNow - 1 <= stomach && food.length) {
           inFridge = food; 
         } else alert('grumble grumble. I ran out of bao!!'); 
   }
@@ -59,7 +56,7 @@ function futureHappy() {
       eat(inFridge, true);
     }
     // Monday again
-    if(prompt('Should we be happy again next week? Y/N').match(/y(es)?/i)) {
+    if(prompt('Should try for happiness again next week? Y/N').match(/y(es)?/i)) {
       futureHappy();
     }
   }
