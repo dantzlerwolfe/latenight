@@ -35,13 +35,14 @@ function futureHappy() {
 
   function eat(food, Thursday) {
     var stomachNow = stomach;
-    food.pop(); 
-    if(stomachNow < eyes) {
+    while(stomachNow < eyes) {
+      food.pop(); 
       stomachNow++;
-      return eat(food);
-    } else if(stomachNow == eyes && food.length) {
-        inFridge = food;
-        if(Thursday) alert('Leftovers, what a treat!');
+    } 
+
+    if(stomachNow == eyes && food.length) {
+      inFridge = food;
+      if(Thursday) alert('Leftovers, what a treat!');
       } else alert('grumble grumble. I ran out of bao!!'); 
   }
 
