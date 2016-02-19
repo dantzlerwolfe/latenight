@@ -34,11 +34,12 @@ function futureHappy() {
   }
 
   function eat(food, Thursday) {
+    var stomachNow = stomach;
     food.pop(); 
-    if(stomach < eyes) {
-      stomach++;
+    if(stomachNow < eyes) {
+      stomachNow++;
       return eat(food);
-    } else if(stomach == eyes && food.length) {
+    } else if(stomachNow == eyes && food.length) {
         inFridge = food;
         if(Thursday) alert('Leftovers, what a treat!');
       } else alert('grumble grumble. I ran out of bao!!'); 
